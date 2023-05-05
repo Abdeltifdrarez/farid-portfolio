@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Poppins";
+    src: url(./Fonts/Poppins-Regular.ttf);
+  }
+  img {
+    width: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  .section {
+    @apply container mx-auto py-[6rem] min-h-screen px-6;
+  }
+}
