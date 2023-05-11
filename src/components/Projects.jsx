@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { btns } from "../Data";
 import { projects } from "../Data";
 import { motion, AnimatePresence } from "framer-motion";
+
 const Projects = () => {
+
+  
+
   const [filterImages, setFilterImages] = useState(null);
   useEffect(() => {
     setFilterImages(projects);
@@ -19,7 +23,9 @@ const Projects = () => {
   return (
     <div className="section" id="projects">
       <div className="mb-8">
-        <h2 className="text-[1.5rem] font-bold dark:text-ghostWhite">My Collections</h2>
+        <h2 className="text-[1.5rem] font-bold dark:text-ghostWhite">
+          My Collections
+        </h2>
         <div className=" w-14 h-[3px] rounded-sm bg-blue"></div>
       </div>
       <div className="mt-4 flex flex-wrap gap-8 dark:text-amber-50	">
@@ -45,15 +51,21 @@ const Projects = () => {
           {filterImages &&
             filterImages.map((filterImage) => {
               return (
-                <motion.div 
+                <motion.div
                   layout
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0, transition: { duration: 0.3 } }}
                   key={filterImage.id}
-                 
                 >
-                  <img src={filterImage.image} alt="" className="rounded-md "/>
+                  <motion.img
+                    src={filterImage.image}
+                    alt={filterImage.value}
+                    className="m-2 object-cover rounded-lg cursor-pointer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  />
+    
                 </motion.div>
               );
             })}

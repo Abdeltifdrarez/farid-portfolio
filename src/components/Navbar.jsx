@@ -4,8 +4,11 @@ import { HiMenuAlt3, HiX } from "react-icons/hi";
 import NavLinks from "./NavLinks";
 import { motion, spring } from "framer-motion";
 import Switcher from "./Dark-Mode/Switcher";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
+
   const [toggle, setToggle] = useState(false);
   const [isTop, setIsTop] = useState(false);
   useEffect(() => {
@@ -39,12 +42,35 @@ const Navbar = () => {
                 whileHover={{ scale: 1.1, originX: 0, color: "#93c5fd" }}
                 transition={{ type: "spring", stiffnessif: 300 }}
               >
-                <a href={`#${navLink.href}`} className="dark:text-white text-[0.95rem]">
-                  {navLink.text}
+                <a
+                  href={`#${navLink.href}`}
+                  className="dark:text-white text-[0.95rem]"
+                >
+                  {i18n.language == "en" ?navLink.text : navLink.textfr}
                 </a>
               </motion.div>
             );
           })}
+          {i18n.language == "fr" && (
+            <button
+              className="dark:text-ghostWhite"
+              onClick={() => {
+                i18n.changeLanguage("en");
+              }}
+            >
+              EN
+            </button>
+          )}
+          {i18n.language == "en" && (
+            <button
+              className="dark:text-ghostWhite"
+              onClick={() => {
+                i18n.changeLanguage("fr");
+              }}
+            >
+              FR
+            </button>
+          )}
         </div>
         <HiMenuAlt3
           className="cursor-pointer text-3xl md:hidden"
@@ -63,6 +89,26 @@ const Navbar = () => {
                 <NavLinks key={navLink.id} {...navLink} setToggle={setToggle} />
               );
             })}
+            {i18n.language == "fr" && (
+              <button
+                className="dark:text-ghostWhite"
+                onClick={() => {
+                  i18n.changeLanguage("en");
+                }}
+              >
+                EN
+              </button>
+            )}
+            {i18n.language == "en" && (
+              <button
+                className="dark:text-ghostWhite"
+                onClick={() => {
+                  i18n.changeLanguage("fr");
+                }}
+              >
+                FR
+              </button>
+            )}
           </div>
           <HiX
             className="absolute right-4  text-3xl top-8 cursor-pointer"

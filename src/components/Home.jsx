@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import farid from "../assets/farid.jpg";
+import resume from "../assets/resume.pdf";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
   return (
     <div className="section flex justify-center items-center" id="home">
       <div className="grid md:grid-cols-2 place-items-center gap-8">
@@ -14,23 +17,18 @@ const Home = () => {
         </div>
         <div>
           <div className="text-grey sm:text-[1.25rem] mb-4 dark:text-cyan-500">
-            Graphic Designer
+            {t('Domine')}
           </div>
           <motion.h2
             className="text-[2rem] sm:text-[3rem] font-bold mb-4 dark:text-ghostWhite"
             initial={{ y: -250, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ type: 'spring', stiffness: 120 }}
+            transition={{ type: "spring", stiffness: 120 }}
           >
             Drarez Farid
           </motion.h2>
           <p className="opacity-80 text-[0.9rem] whitespace-pre-line dark:text-slate-100">
-            <span className="text-xl font-bold">H</span>i there! My name is
-            Farid Drarez and I'm a 25-year-old graphic designer based in
-            Morocco. I have always been passionate about visual art and design,
-            which led me to pursue a career in graphic design. I specialize in
-            creating eye-catching and effective designs for various mediums such
-            as print, web, and social media.
+          {t('presentation')}
           </p>
           <div className="flex mt-4 gap-4 dark:text-gray-100">
             <motion.button
@@ -41,7 +39,9 @@ const Home = () => {
               }}
               className="py-2 px-4 border-[2px] border-solid border-blue dark:border-cyan-500 text-[0.9rem] rounded-[2.2rem] shadow-md"
             >
-              <a href="">Download Cv</a>
+              <a href={resume} download={resume}>
+              {t('cv')}
+              </a>
             </motion.button>
             <motion.button
               whileHover={{

@@ -7,10 +7,10 @@ const Footer = () => {
         <a href="" className="mr-2 text-blue text-[0.9rem] dark:text-cyan-500">
           Twitter
         </a>
-        <a href="" className="mr-2 text-blue text-[0.9rem] dark:text-cyan-500">
+        <a href="https://web.facebook.com/drarez.farid.5" target="_blank"  className="mr-2 text-blue text-[0.9rem] dark:text-cyan-500">
           Facebook
         </a>
-        <a href="" className="mr-2 text-blue  text-[0.9rem] dark:text-cyan-500">
+        <a href="https://www.instagram.com/fariddrarez/" target="_blank" className="mr-2 text-blue  text-[0.9rem] dark:text-cyan-500">
           Instagram
         </a>
       </div>
