@@ -1,12 +1,16 @@
 import React from "react";
 import { technologiesData } from "../Data";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Technologies = () => {
+  const { t, i18n } = useTranslation();
   return (
     <div className="section" id="technologies">
       <div className="mb-8">
-        <h2 className="text-[1.5rem] font-bold dark:text-ghostWhite">Skills</h2>
+        <h2 className="text-[1.5rem] font-bold dark:text-ghostWhite">
+          {t("skills")}
+        </h2>
         <div className=" w-14 h-[3px] rounded-sm bg-blue"></div>
       </div>
       <div>

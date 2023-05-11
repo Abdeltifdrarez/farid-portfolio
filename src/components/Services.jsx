@@ -7,7 +7,6 @@ const Services = () => {
     <div className="section" id="services">
       <div className="mb-8">
         <h2 className="text-[1.5rem] font-bold dark:text-ghostWhite">
-          {" "}
           {t("services")}
         </h2>
         <div className="w-14 h-[3px] bg-blue rounded-sm"></div>

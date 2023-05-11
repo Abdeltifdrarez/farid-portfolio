@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { btns } from "../Data";
 import { projects } from "../Data";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
-
-  
+  const { t, i18n } = useTranslation();
 
   const [filterImages, setFilterImages] = useState(null);
   useEffect(() => {
@@ -24,7 +24,7 @@ const Projects = () => {
     <div className="section" id="projects">
       <div className="mb-8">
         <h2 className="text-[1.5rem] font-bold dark:text-ghostWhite">
-          My Collections
+          {t("collection")}
         </h2>
         <div className=" w-14 h-[3px] rounded-sm bg-blue"></div>
       </div>
@@ -65,7 +65,6 @@ const Projects = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   />
-    
                 </motion.div>
               );
             })}
